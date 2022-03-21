@@ -1,17 +1,17 @@
 pipeline {
-    agent {
-        docker { image 'ppiper/jenkins-master' }
+  agent {
+    docker { image 'ppiper/jenkins-master' }
     }
-    stages {
-        stage('prepare') {
-        checkout scm
-        setupCommonPipelineEnvironment script:this
-    }
-        stage('Build') {
-            echo('tbd')
-    }
-        stage('deploy') {
-            echo('tbd deploy')
+  stages {
+    stage('prepare') {
+      checkout scm
+      setupCommonPipelineEnvironment script:this
+      }
+    stage('Build') {
+      echo('tbd')
+      }
+    stage('deploy') {
+      echo('tbd deploy')
     }
     }
 }
