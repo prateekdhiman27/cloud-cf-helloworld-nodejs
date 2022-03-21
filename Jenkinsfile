@@ -1,5 +1,23 @@
-@Library('piper-lib-os') _
-node() {
+pipeline {
+    agent {
+        docker { image 'ppiper/jenkins-master' }
+    }
+    stages {
+        stage('prepare') {
+        checkout scm
+        setupCommonPipelineEnvironment script:this
+    }
+        stage('Build') {
+            echo('tbd')
+    }
+        stage('deploy') {
+            echo('tbd deploy')
+    }
+    }
+}
+
+
+/*node() {
     stage('prepare') {
         checkout scm
         setupCommonPipelineEnvironment script:this
@@ -8,3 +26,4 @@ node() {
     mtaBuild script: this
 }
 }
+*/
