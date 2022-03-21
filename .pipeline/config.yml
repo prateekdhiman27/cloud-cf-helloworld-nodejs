@@ -2,4 +2,12 @@ general:
 steps:
   mtaBuild:
     buildTarget: 'CF'
-    buildPlatform: 'Cf'
+    buildPlatform: 'CF'
+  cloudFoundryDeploy:
+    deployTool: 'mtaDeployPlugin'
+    deployType: 'standard'
+    cloudFoundry:
+      credentialsId: 'cf-deploy'
+      apiEndpoint: 'https://api.cf.us10.hana.ondemand.com'
+      org: 'PreSales_jmr'
+      space: 'dev'
