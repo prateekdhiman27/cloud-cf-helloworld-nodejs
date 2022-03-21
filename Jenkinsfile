@@ -1,29 +1,7 @@
-pipeline {
-  agent {
-    docker { image 'ppiper/jenkins-master' }
-    }
-  stages {
-    stage('prepare') {
-      checkout scm
-      setupCommonPipelineEnvironment script:this
-      }
-    stage('Build') {
-      echo('tbd')
-      }
-    stage('deploy') {
-      echo('tbd deploy')
-    }
-    }
-}
-
-
-/*node() {
+@Library('piper-lib-os') _
+node() {
     stage('prepare') {
         checkout scm
         setupCommonPipelineEnvironment script:this
     }
-    stage('build') {
-    mtaBuild script: this
 }
-}
-*/
